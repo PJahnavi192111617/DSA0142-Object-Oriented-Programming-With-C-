@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int N, N1, rem, res = 0;
+    cout << "Enter a number: "<<endl;
+    cin >> N;
+    N1 = N;
+	while (N1!= 0) {
+        rem= N1 % 10;
+        res += rem*rem *rem;
+        N1 /= 10;
+    }
+    if (res == N)
+        cout << N << " is an Armstrong number"<<endl;
+    else
+        cout << N << " is not an Armstrong number"<<endl;
+    return 0;
+}
