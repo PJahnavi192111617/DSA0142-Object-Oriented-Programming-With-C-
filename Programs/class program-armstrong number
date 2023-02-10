@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+class armstrong
+{
+	private:
+		int n,sum,r,temp;
+	public:
+		void getdetails(void);
+		void arms(void);
+};
+void armstrong::getdetails(void){
+	cout<<"Enter the number= ";
+	cin>>n;
+}
+void armstrong::arms(void){
+	temp=n;
+	while(n>0){
+		r=n%10;
+		sum+=r*r*r;
+		n=n/10;
+	}
+	if(temp==sum){
+		cout<<temp<<"is armstrong number";
+	}
+	else
+	{
+		cout<<temp<<"is not an armstrong number";
+	}
+}
+int main(){
+	armstrong arm;
+	arm.getdetails();
+	arm.arms();
+	return 0;
+}
