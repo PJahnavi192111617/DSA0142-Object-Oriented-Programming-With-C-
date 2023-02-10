@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+class sample
+{
+	private:
+	    char name[30];
+	    char dept_name[10];
+	    float n1,n2,sum;
+	    float average;
+	public:
+		void getDetails(void);
+		void putDetails(void);
+};
+void sample::getDetails(void){
+	cout<<"Enter the name: ";
+	cin>>name;
+	cout<<"Enter the department name: ";
+	cin>>dept_name;
+	cout<<"Enter the marks: ";
+	cin>>n1>>n2;
+	sum=(float)n1+n2;
+	average=(float)sum/2;
+}
+void sample::putDetails(void){
+	cout<<"Student Details: \n";
+	cout<<"Name: "<<name<<"\nDepartment name: "<<dept_name<<"\nAverage= "<<average;
+}
+int main()
+{
+	sample std;
+	std.getDetails();
+	std.putDetails();
+	return 0;
+}
