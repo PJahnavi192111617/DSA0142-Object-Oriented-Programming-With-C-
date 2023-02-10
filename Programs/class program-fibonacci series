@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class fibonacci
+{
+	private:
+		int n,n1=0,n2=1,n3,i;
+	public:
+		void getdetails(void);
+		void fibo(void);
+		void putdetails(void);
+};
+void fibonacci::getdetails(void){
+	cout<<"Enter the number= ";
+	cin>>n;
+}
+void fibonacci::fibo(void){
+	for(i=1;i<=n;i++){
+		cout<<n1<<" ";
+		n3=n1+n2;
+		n1=n2;
+		n2=n3;
+	}
+}
+int main()
+{
+	fibonacci fib;
+	fib.getdetails();
+	fib.fibo();
+	return 0;
+}
