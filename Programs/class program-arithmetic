@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+class arithmetic
+{
+	private:
+		int a,b;
+		int c,d,e,f;
+	public:
+		void getdetails(void);
+		void add(void);
+		void sub(void);
+		void mul(void);
+		void div(void);
+		void putdetails(void);
+};
+void arithmetic::getdetails(void){
+	cout<<"Enter the values= ";
+	cin>>a>>b;
+}
+void arithmetic::add(void){
+	c=a+b;
+	cout<<"Addition= "<<c;
+}
+void arithmetic::sub(void){
+	d=a-b;
+	cout<<"Subtraction= "<<d;
+}
+void arithmetic::mul(void){
+	e=a*b;
+	cout<<"Multiplication= "<<e;
+}
+void arithmetic::div(void){
+	f=a/b;
+	cout<<"Division= "<<f;
+}
+void arithmetic::putdetails(void){
+	cout<<"\nArithmrtic operations";
+	cout<<"\nAddition= "<<c<<"\nSubtraction= "<<d<<"\nMultiplication= "<<e<<"\nDivision= "<<f;
+}
+int main()
+{
+	arithmetic ar;
+	ar.getdetails();
+	ar.add();
+	ar.sub();
+	ar.mul();
+	ar.div();
+	ar.putdetails();
+	return 0;
+}
