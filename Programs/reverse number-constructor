@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+class reverse
+{
+	private:
+		int rem,n,rev=0;
+	public:
+		void getdetails(void);
+		void revnum(void);
+		void putdetails(void);
+		reverse(int n1)
+		{
+			n=n1;
+		}
+};
+void reverse::getdetails(void){
+	cout<<"Enter the number= ";
+	cin>>n;
+}
+void reverse::revnum(void){
+	while (n>0){
+		
+	    rem=n%10;
+	    rev=(rev*10)+rem;
+	    n=n/10;
+	}
+}
+void reverse::putdetails(void){
+	cout<<"Reverse Number= "<<rev;
+}
+int main()
+{
+	reverse rvs(35);
+	rvs.getdetails();
+	rvs.revnum();
+	rvs.putdetails();
+	return 0;
+}
