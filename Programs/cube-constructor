@@ -1,0 +1,24 @@
+using namespace std;
+#include<iostream>
+class cube
+{
+public:
+int a, b,i;
+cube()
+{
+	cout<<" \nEnter the number of finding cube";
+	cin>>a;
+	for(i=1;i<=a;i++)
+	{
+		
+	    cout<<" \nThe cube root of number "<<i*i*i;
+	}
+	
+}
+};
+
+int main()
+{
+	cout<<"Demonstration for  finding cube root of a number";
+	cube a;
+}
