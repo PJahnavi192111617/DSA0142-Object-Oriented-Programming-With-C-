@@ -1,0 +1,42 @@
+#include <iostream>
+
+using namespace std;
+
+class RightAngleTriangle {
+    private:
+        int num;
+    
+    public:
+        RightAngleTriangle() {
+            num = 0;
+        }
+        
+        RightAngleTriangle(int n) {
+            num = n;
+        }
+        
+        void displayTriangle() {
+            for (int i = 1; i <= num; i++) {
+                for (int j = 1; j <= i; j++) {
+                    cout << i << " ";
+                }
+                cout << endl;
+            }
+        }
+};
+
+int main()
+{
+    int n;
+    
+    cout << "Enter the number of rows: ";
+    cin >> n;
+    
+    RightAngleTriangle obj1;
+    obj1.displayTriangle();
+    
+    RightAngleTriangle obj2(n);
+    obj2.displayTriangle();
+    
+    return 0;
+}
