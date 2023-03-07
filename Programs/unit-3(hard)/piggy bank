@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+class AddAmount {
+private:
+    int amount;
+public:
+    AddAmount() {
+        amount = 50;
+    }
+    
+    AddAmount(int a) {
+        amount = 50 + a;
+    }
+    
+    void displayAmount() {
+        cout << "The final amount in the Piggie Bank is: $" << amount << endl;
+    }
+};
+
+int main() {
+    AddAmount piggyBank1; // creates an object of the class using the default constructor
+    piggyBank1.displayAmount(); // displays the final amount in the Piggie Bank
+    
+    AddAmount piggyBank2(100); // creates an object of the class using the parameterized constructor
+    piggyBank2.displayAmount(); // displays the final amount in the Piggie Bank
+    
+    return 0;
+}
