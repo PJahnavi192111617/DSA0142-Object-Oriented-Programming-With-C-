@@ -1,0 +1,53 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Shape {
+public:
+    Shape() {
+    }
+    
+    float volume() {
+        return 0;
+    }
+};
+
+class Cube : public Shape {
+    float side;
+public:
+    Cube(float s) {
+        side = s;
+    }
+    
+    float volume() {
+        return pow(side, 3);
+    }
+};
+
+class Cylinder : public Shape {
+    float radius, height;
+public:
+    Cylinder(float r, float h) {
+        radius = r;
+        height = h;
+    }
+    
+    float volume() {
+        return M_PI * pow(radius, 2) * height;
+    }
+};
+
+int main() {
+    float s, r, h;
+    cout << "Enter the side of the cube: ";
+    cin >> s;
+    Cube c(s);
+    cout << "Volume of the cube: " << c.volume() << endl;
+    
+    cout << "Enter the radius and height of the cylinder: ";
+    cin >> r >> h;
+    Cylinder cyl(r, h);
+    cout << "Volume of the cylinder: " << cyl.volume() << endl;
+    
+    return 0;
+}
