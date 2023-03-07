@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class MyClass {
+  public:
+    MyClass(int x, int y);
+    void print();
+
+  private:
+    int x, y;
+};
+
+// Declare the constructor inside the class
+MyClass::MyClass(int x, int y) {
+  this->x = x;
+  this->y = y;
+}
+
+// Define the constructor outside the class
+MyClass::MyClass(int x, int y, int z) {
+  this->x = x;
+  this->y = y;
+  this->z = z;
+}
+
+void MyClass::print() {
+  cout << "x: " << x << ", y: " << y << endl;
+}
+
+int main() {
+  MyClass obj(1, 2, 3);
+  obj.print();
+  return 0;
+}
