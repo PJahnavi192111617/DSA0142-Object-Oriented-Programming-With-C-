@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, fib1 = 0, fib2 = 1, fib;
+
+    cout << "Enter a positive integer n: ";
+    cin >> n;
+
+    if (n == 1) {
+        fib = 0;
+    } else if (n == 2) {
+        fib = 1;
+    } else {
+        for (int i = 3; i <= n; i++) {
+            fib = fib1 + fib2;
+            fib1 = fib2;
+            fib2 = fib;
+        }
+    }
+
+    cout << "The " << n << "th Fibonacci number is: " << fib << endl;
+    return 0;
+}
