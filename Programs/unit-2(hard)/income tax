@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double taxable_income, tax;
+    
+    // Taking input from user
+    cout << "Enter the taxable income: ";
+    cin >> taxable_income;
+    
+    // Calculating tax based on income
+    if (taxable_income <= 60000) {
+        tax = 0;
+    }
+    else if (taxable_income > 60000 && taxable_income <= 150000) {
+        tax = taxable_income * 0.05;
+    }
+    else if (taxable_income > 150000 && taxable_income <= 500000) {
+        tax = taxable_income * 0.1;
+    }
+    else {
+        tax = taxable_income * 0.15;
+    }
+    
+    // Displaying the tax amount
+    cout << "The tax on the given taxable income is: " << tax << endl;
+    
+    return 0;
+}
