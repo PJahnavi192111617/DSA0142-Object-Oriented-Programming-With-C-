@@ -1,0 +1,21 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double number, cubeRoot;
+
+    cout << "Enter a number: ";
+    cin >> number;
+
+    if (number >= 0) {
+        cubeRoot = cbrt(number);
+        cout << "The cube root of " << number << " is " << cubeRoot << endl;
+    } else {
+        cubeRoot = cbrt(-number);
+        cout << "The cube root of " << number << " is " << -cubeRoot << "i" << endl;
+    }
+
+    return 0;
+}
