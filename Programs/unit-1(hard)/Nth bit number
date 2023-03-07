@@ -1,0 +1,26 @@
+#include <iostream>
+#include <bitset>
+using namespace std;
+
+int main() {
+    int number, bitPosition;
+    cout << "Enter a number: ";
+    cin >> number;
+    cout << "Enter the bit position to set (0-31): ";
+    cin >> bitPosition;
+
+    if (bitPosition < 0 || bitPosition > 31) {
+        cout << "Invalid bit position entered. Please enter a value between 0 and 31." << endl;
+        return 0;
+    }
+
+    bitset<32> binary(number); 
+    cout << "Before setting the bit: " << binary << endl;
+
+    int mask = 1 << bitPosition; 
+    number |= mask; 
+
+    binary = number; 
+    cout << "After setting the bit:  " << binary << endl;
+    return 0;
+}
