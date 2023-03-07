@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+class SeriesSum {
+    private:
+        int num;
+        float sum;
+    
+    public:
+        SeriesSum() {
+            num = 0;
+            sum = 0;
+        }
+        
+        SeriesSum(int n) {
+            num = n;
+            sum = 0;
+        }
+        
+        void computeSum() {
+            for (int i = 1; i <= num; i++) {
+                sum += 1.0/i;
+            }
+        }
+        
+        void displaySum() {
+            cout << "The sum of the series is: " << sum << endl;
+        }
+};
+
+int main()
+{
+    int n;
+    
+    cout << "Enter the value of n: ";
+    cin >> n;
+    
+    SeriesSum obj1;
+    obj1.computeSum();
+    obj1.displaySum();
+    
+    SeriesSum obj2(n);
+    obj2.computeSum();
+    obj2.displaySum();
+    
+    return 0;
+}
