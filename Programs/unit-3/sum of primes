@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+class SumOfPrimes {
+private:
+    int num, prime1, prime2;
+public:
+    SumOfPrimes(int n) {
+        num = n;
+        prime1 = 0;
+        prime2 = 0;
+    }
+    ~SumOfPrimes() {
+        cout << "Destructor called!" << endl;
+    }
+    bool isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    void findSumOfPrimes() {
+        for (int i = 2; i <= num / 2; i++) {
+            if (isPrime(i)) {
+                if (isPrime(num - i)) {
+                    prime1 = i;
+                    prime2 = num - i;
+                    break;
+                }
+            }
+        }
+    }
+    void display() {
+        if (prime1 != 0 && prime2 != 0) {
+            cout << num << " can be expressed as the sum of " << prime1 << " and " << prime2 << "." << endl;
+        } else {
+            cout << num << " cannot be expressed as the sum of two prime numbers." << endl;
+        }
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    SumOfPrimes obj(n);
+    obj.findSumOfPrimes();
+    obj.display();
+
+    return 0;
+}
