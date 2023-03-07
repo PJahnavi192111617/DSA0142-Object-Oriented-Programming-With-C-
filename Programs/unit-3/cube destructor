@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+class CubeNumbers {
+    private:
+        int num;
+    
+    public:
+        CubeNumbers(int n) {
+            num = n;
+        }
+        
+        void displayCubes() {
+            for (int i = 1; i <= num; i++) {
+                cout << i * i * i << " ";
+            }
+            cout << endl;
+        }
+        
+        ~CubeNumbers() {
+            cout << "Object destroyed." << endl;
+        }
+};
+
+int main()
+{
+    int n;
+    
+    cout << "Enter the number: ";
+    cin >> n;
+    
+    CubeNumbers obj(n);
+    obj.displayCubes();
+    
+    return 0;
+}
