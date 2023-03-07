@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+class CaseConverter {
+public:
+    CaseConverter(string input) {
+        this->input = input;
+    }
+
+    string toUpperCase() {
+        string result = "";
+        for (int i = 0; i < input.length(); i++) {
+            result += toupper(input[i]);
+        }
+        return result;
+    }
+
+    string toLowerCase() {
+        string result = "";
+        for (int i = 0; i < input.length(); i++) {
+            result += tolower(input[i]);
+        }
+        return result;
+    }
+
+private:
+    string input;
+};
+
+int main() {
+    string input;
+    cout << "Enter a string: ";
+    getline(cin, input);
+
+    CaseConverter caseConverter(input);
+    string upperCase = caseConverter.toUpperCase();
+    string lowerCase = caseConverter.toLowerCase();
+
+    cout << "Upper case: " << upperCase << endl;
+    cout << "Lower case: " << lowerCase << endl;
+
+    return 0;
+}
