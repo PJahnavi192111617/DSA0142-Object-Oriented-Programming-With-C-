@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int add(int a, int b) {
+   return a + b;
+}
+float add(float a, float b) {
+   return a + b;
+}
+double add(double a, double b) {
+   return a + b;
+}
+int main() {
+   int num1 = 5, num2 = 10;
+   float fnum1 = 3.14, fnum2 = 2.71;
+   double dnum1 = 1234.5678, dnum2 = 9876.5432;
+   cout << "Sum of " << num1 << " and " << num2 << " is " << add(num1, num2) << endl;
+   cout << "Sum of " << fnum1 << " and " << fnum2 << " is " << add(fnum1, fnum2) << endl;
+   cout << "Sum of " << dnum1 << " and " << dnum2 << " is " << add(dnum1, dnum2) << endl;
+   return 0;
+}
