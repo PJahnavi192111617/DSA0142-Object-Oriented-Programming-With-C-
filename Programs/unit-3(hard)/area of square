@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+class Area {
+public:
+    void printArea(int side) {
+        cout << "Area of square: " << side * side << endl;
+    }
+    
+    void printArea(int length, int breadth) {
+        cout << "Area of rectangle: " << length * breadth << endl;
+    }
+};
+
+int main() {
+    Area a;
+    a.printArea(5); // prints the area of a square with side length 5
+    a.printArea(6, 7); // prints the area of a rectangle with length 6 and breadth 7
+    
+    return 0;
+}
