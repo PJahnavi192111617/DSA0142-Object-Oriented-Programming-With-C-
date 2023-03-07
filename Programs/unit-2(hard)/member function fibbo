@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+class Series {
+private:
+    int num;
+
+public:
+    void input() {
+        cout << "Enter a number: ";
+        cin >> num;
+    }
+
+    void show() {
+        int a = 0, b = 1, c;
+        cout << "Fibonacci series of " << num << " numbers:" << endl;
+        for (int i = 1; i <= num; ++i) {
+            cout << a << " ";
+            c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+};
+
+int main() {
+    Series s;
+    s.input();
+    s.show();
+    return 0;
+}
