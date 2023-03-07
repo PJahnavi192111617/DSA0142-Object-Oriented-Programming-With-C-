@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class ReverseNumber {
+private:
+    int num, revNum;
+public:
+    ReverseNumber() {
+        num = 0;
+        revNum = 0;
+    }
+    ReverseNumber(int n) {
+        num = n;
+        revNum = 0;
+    }
+    void reverse() {
+        int remainder;
+        while (num != 0) {
+            remainder = num % 10;
+            revNum = revNum * 10 + remainder;
+            num /= 10;
+        }
+    }
+    void display() {
+        cout << "Original Number: " << num << endl;
+        cout << "Reverse Number: " << revNum << endl;
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    ReverseNumber obj1;
+    obj1.display();
+
+    ReverseNumber obj2(n);
+    obj2.reverse();
+    obj2.display();
+
+    return 0;
+}
