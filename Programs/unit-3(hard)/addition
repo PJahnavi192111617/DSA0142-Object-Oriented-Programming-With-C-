@@ -1,0 +1,13 @@
+class Add {
+private:
+    int num1;
+    int num2;
+public:
+    Add(int n1, int n2) : num1(n1), num2(n2) {}
+    Add operator+(const Add& other) const {
+        return Add(num1 + other.num1, num2 + other.num2);
+    }
+    void print() const {
+        std::cout << "(" << num1 << ", " << num2 << ")" << std::endl;
+    }
+};
