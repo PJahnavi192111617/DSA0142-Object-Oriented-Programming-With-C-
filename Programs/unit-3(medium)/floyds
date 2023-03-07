@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class FloydTriangle {
+  public:
+    FloydTriangle(int rows);
+    ~FloydTriangle();
+
+  private:
+    int rows;
+};
+
+FloydTriangle::FloydTriangle(int rows) {
+  this->rows = rows;
+  int num = 1;
+
+  for (int i = 1; i <= rows; i++) {
+    for (int j = 1; j <= i; j++) {
+      cout << num << " ";
+      num++;
+    }
+    cout << endl;
+  }
+}
+
+FloydTriangle::~FloydTriangle() {
+  cout << "FloydTriangle object destroyed" << endl;
+}
+
+int main() {
+  int rows;
+  cout << "Enter the number of rows in Floyd's Triangle: ";
+  cin >> rows;
+
+  FloydTriangle obj(rows);
+
+  return 0;
+}
