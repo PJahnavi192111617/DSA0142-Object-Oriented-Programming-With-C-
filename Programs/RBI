@@ -1,0 +1,61 @@
+#include<iostream>
+using namespace std;
+class RBI{
+	public:
+		int lendingrate;
+		RBI(){
+			cout<<"\nThis is central bank of india";
+			lendingrate=5;
+		}
+};
+class customer{
+	public:
+		int customerno;
+		string name;
+};
+class account{
+	public:
+		int accountno;
+};
+class SBI:public RBI,public customer,public account{
+	public:
+		SBI(int customerno, int accountno, string name)
+		{
+			cout<<"\nThis is the bank of SBI";
+			cout<<"\nThe lending rate of SBI= "<<lendingrate;
+			cout<<"\nDisplaying the customer details of SBI";
+			cout<<"\nEnter the customer number= "<<customerno;
+			cout<<"\nEnter the account number= "<<accountno;
+			cout<<"\nEnter the name of the customer= "<<name;
+		}
+};
+class ICICI: public RBI,public customer, public account{
+	public:
+		ICICI(int customerno, int accountno, string name)
+		{
+			cout<<"\nThis is the bank of ICICI";
+			cout<<"\nThe lending rate of ICICI= "<<lendingrate;
+			cout<<"\nDisplaying the customer details of ICICI";
+			cout<<"\nEnter the customer number= "<<customerno;
+			cout<<"\nEnter the account number= "<<accountno;
+			cout<<"\nEnter the name of the customer= "<<name;
+		}
+};
+class PNB: public RBI,public customer,public account{
+	public:
+		PNB(int customerno, int accountno, string name)
+		{
+			cout<<"\nThis is the bank of PNB";
+			cout<<"\nThe lending rate of PNB= "<<lendingrate;
+			cout<<"\nDisplaying the customer details of PNB";
+			cout<<"\nEnter the customer number= "<<customerno;
+			cout<<"\nEnter the account number= "<<accountno;
+			cout<<"\nEnter the name of the customer= "<<name;
+		}
+};
+int main()
+{
+	SBI sbi(654,123,"JAHNAVI");
+	ICICI icici(345,2345678,"LAHARI");
+	PNB pnb(980,23459876,"HASINI");
+}
