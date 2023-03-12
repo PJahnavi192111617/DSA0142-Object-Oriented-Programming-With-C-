@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+class vehicle
+{
+	public:
+		float mileage;
+		float price;
+		
+		
+};
+class car:public vehicle
+{
+	public:
+		int cost,warranty,seating_capacity;
+		string fuel_type;
+};
+class bike:public vehicle
+{
+	public:
+		int no_of_cylinders,no_of_gears,fuel_size;
+		string cooling_type,wheel_type;
+};
+class audi:public car
+{
+	public:
+		string model_type,warranty,fuel_type;
+		int ownership_cost,seating_capacity;
+	    void getdata()
+		{
+			cout<<"enter the model type";
+			cin>>model_type;
+			cout<<"ownership:";
+			cin>>ownership_cost;
+			cout<<"warranty:";
+			cin>>warranty;
+			cout<<"seating capacity:";
+			cin>>seating_capacity;
+			cout<<"fuel type: ";
+			cin>>fuel_type;
+			cout<<"mileage";
+			cin>>mileage;
+			cout<<"price:";
+			cin>>price;
+		}
+	void putdata()
+	{
+		cout<<"\n model type:"<<model_type;
+		cout<<"\n ownership cost:"<<ownership_cost;
+		cout<<"\n warranty:"<<warranty;
+		cout<<"\n seating capacity:"<<seating_capacity;
+		cout<<"\n fuel type:"<<fuel_type;
+		cout<<"\n mileage:"<<mileage;
+		cout<<"\n price:"<<price;
+			}
+};
+int main()
+{
+	audi a;
+	a.getdata();
+	a.putdata();
+	return 0;
+}
