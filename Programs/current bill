@@ -1,0 +1,68 @@
+#include<iostream>
+using namespace std;
+class ebill{
+	private:
+		int customer_no,pre_reading,curr_reading,eb_type,usedunits;
+		string consumer_name;
+	public:
+		float amount=0;
+		void input(void);
+		void calculation(void);
+		void display(void);
+};
+void ebill::input(){
+		cout<<"Enter the customer number= ";
+		cin>>customer_no;
+		cout<<"Enter the consumer name= ";
+		cin>>consumer_name;
+		cout<<"Enter the previous month reading= ";
+		cin>>pre_reading;
+		cout<<"Enter the current month reading= ";
+		cin>>curr_reading;
+		cout<<"Enter the EB connection\n1-domestic\n2-commercial ";
+		cin>>eb_type;
+}
+void ebill::calculation(){
+	if(eb_type==1){
+		usedunits=curr_reading-pre_reading;
+		if(usedunits<=100){
+			amount=(usedunits*1);
+		}
+		if(usedunits>100 && usedunits<=200){
+			amount=100+((usedunits-100)*2.50);
+		}
+		if(usedunits>200 && usedunits<=500){
+			amount=350+((usedunits-200)*4);
+		}
+		if(usedunits>500){
+			amount=1550+((usedunits-500)*6);
+		}
+	}
+	if(eb_type==2){
+		usedunits=curr_reading-pre_reading;
+		if(usedunits<100){
+			amount=(usedunits*2);
+		}
+		if(usedunits>100 && usedunits<200)
+		{
+			amount=200+((usedunits-100)*4.50);
+		 } 
+		 if(usedunits>200 && usedunits<500){
+		 	amount=650+((usedunits-200)*6);
+		 }
+		 if(usedunits>500){
+		 	amount=2450+((usedunits-500)*7);
+		 }
+	}
+	
+}
+void ebill::display(){
+	cout<<"Current bill of the month= "<<amount;
+}
+int main(){
+	ebill eb;
+	eb.input();
+	eb.calculation();
+	eb.display();
+	return 0;
+}
